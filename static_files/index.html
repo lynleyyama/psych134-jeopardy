@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<h1 class="text-center mt-4">MYTH or FACT: Eating Disorders</h1>
+	<div class="row mt-5 categories">
+		<div class="card col-auto ml-auto" id="history">HISTORY</div>
+		<div class="card col-auto" id="types">TYPES OF EATING DISORDERS</div>
+		<div class="card col-auto" id="medical">MEDICAL CONSEQUENCES</div>
+		<div class="card col-auto" id="culture">CULTURAL INFLUENCES</div>
+		<div class="card col-auto" id="neurobiology">NEUROBIOLOGY</div>
+	</div>
+	<div class="row mt-4 questions">
+		<div class="card col-auto ml-auto" id="h-100">100</div>
+		<div class="card col-auto" id="t-100">100</div>
+		<div class="card col-auto" id="m-100">100</div>
+		<div class="card col-auto" id="c-100">100</div>
+		<div class="card col-auto" id="n-100">100</div>
+	</div>
+	<div class="row mt-3 questions">
+		<div class="card col-auto ml-auto" id="h-200">200</div>
+		<div class="card col-auto" id="t-200">200</div>
+		<div class="card col-auto" id="m-200">200</div>
+		<div class="card col-auto" id="c-200">200</div>
+		<div class="card col-auto" id="n-200">200</div>
+	</div>
+	<div class="row mt-3 questions">
+		<div class="card col-auto ml-auto" id="h-300">300</div>
+		<div class="card col-auto" id="t-300">300</div>
+		<div class="card col-auto" id="m-300">300</div>
+		<div class="card col-auto" id="c-300">300</div>
+		<div class="card col-auto" id="n-300">300</div>
+	</div>
+	<div class="row mt-3 questions">
+		<div class="card col-auto ml-auto" id="h-400">400</div>
+		<div class="card col-auto" id="t-400">400</div>
+		<div class="card col-auto" id="m-400">400</div>
+		<div class="card col-auto" id="c-400">400</div>
+		<div class="card col-auto" id="n-400">400</div>
+	</div>
+	<div class="row mt-3 questions">
+		<div class="card col-auto ml-auto" id="h-500">500</div>
+		<div class="card col-auto" id="t-500">500</div>
+		<div class="card col-auto" id="m-500">500</div>
+		<div class="card col-auto" id="c-500">500</div>
+		<div class="card col-auto" id="n-500">500</div>
+	</div>
+	<div class="modal" id="question-modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h4>History $100</h4>
+			<div class="buttons">
+				<div class="btn btn-primary" id="myth">MYTH</div>
+				<div class="btn btn-primary" id="fact">FACT</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="info-modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h4></h4>
+			<p></p>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			let answer = '';
+			let explanation = '';
+			let currQuestion = '';
+			$('.categories .card').click((e)=>{
+				$.ajax({
+					url : 'category/' + event.target.id,
+					type : 'GET',
+					dataType: 'json',
+					success : (data) => {
+						console.log(data);
+						if(data){
+							$('#info-modal .modal-content h4').html(data.title);
+							$('#info-modal .modal-content p').html(data.info);
+							$('#info-modal').show();
+						}
+					}
+				});
+			});
+			$('.questions .card').click((e)=>{
+				currQuestion = event.target.id;
+				$.ajax ({
+					url : 'question/' + event.target.id,
+					type : 'GET',
+					dataType: 'json',
+					success: (data) => {
+						if(data){
+							$("#question-modal .modal-content h4").html(data.q);
+							$("#question-modal").show();
+							answer = data.a;
+							explanation = data.e;
+						}
+						else {
+							console.log("Error");
+						}
+					}
+				});
+			});
+			$('.close').click((e)=>{
+				$('.modal').hide();
+				$('.modal h4').html('');
+			})
+			$(window).click((e)=>{
+				if($(event.target).attr('class') == 'modal'){
+					$('.modal').hide();
+					$('.modal h4').html('');
+				}
+			});
+
+			$('#myth').click((e)=>{
+				if(answer == 'm'){
+					correct();
+				} else {
+					incorrect();
+				}
+			});
+			$('#fact').click((e)=>{
+				if(answer == 'f'){
+					correct();
+				} else {
+					incorrect();
+				}
+			});
+			const correct = () => {
+				$('#info-modal .modal-content h4').html("CORRECT!");
+				$('#info-modal .modal-content p').html(explanation);
+				$('#info-modal').show();
+				$('#question-modal').hide();
+				$('#' + currQuestion).html('<i class="fas fa-check fa-3x" style="color: lightgreen;"></i>');
+				$('#' + currQuestion).addClass('answered');
+			};
+			const incorrect = () => {
+				$('#info-modal .modal-content h4').html("INCORRECT");
+				$('#info-modal .modal-content p').html(explanation);
+				$('#info-modal').show();
+				$('#question-modal').hide();
+				$('#' + currQuestion).html('<i class="fas fa-times fa-3x" style="color: red;"></i>');
+				$('#' + currQuestion).addClass('answered');
+			}
+		});
+	</script>
+</body>
+</html>
