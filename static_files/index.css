@@ -7,11 +7,20 @@
 	text-align: center;
 }
 
+.card:hover {
+    background-color: #85B0BE;
+}
+
 .categories > .card {
-	background-color: blue;
+	background-color: #0078CD;
 	color: white;
 	text-align: center;
 }
+
+.categories > .card:hover {
+    background-color: #0050A5;
+}
+
 .row {
 	margin: 0 5rem;
 }
@@ -51,3 +60,17 @@
     pointer-events: none;
 }
 
+#clear {
+    float: right;
+    margin-right: 2rem;
+    color: #aaaaaa;
+}
+
+#clear:hover {
+    color: black;
+}
+
+#title {
+    text-align: center;
+    margin-top: 2rem;
+}

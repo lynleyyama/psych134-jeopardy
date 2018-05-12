@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="index.css">
 </head>
 <body>
-	<h1 class="text-center mt-4">MYTH or FACT: Eating Disorders</h1>
+	<i class="fas fa-redo fa-lg" id="clear"></i>
+	<h1 id="title">MYTH or FACT: Eating Disorders</h1>
 	<div class="row mt-5 categories">
 		<div class="card col-auto ml-auto" id="history">HISTORY</div>
 		<div class="card col-auto" id="types">TYPES OF EATING DISORDERS</div>
@@ -132,6 +133,9 @@
 				} else {
 					incorrect();
 				}
+			});
+			$('#clear').click((e)=>{
+				location.reload();
 			});
 			const correct = () => {
 				$('#info-modal .modal-content h4').html("CORRECT!");
