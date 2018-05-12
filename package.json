@@ -1,21 +1,21 @@
 {
   "name": "cogs121",
   "version": "1.0.0",
-  "description": "COGS 121 Project",
+  "description": "PSYCH 134 Midterm Project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/"
+    "url": "git+https://github.com/lynleyyama/psych134-jeopardy"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/"
+    "url": "https://github.com/lynleyyama/psych134-jeopardy"
   },
-  "homepage": "https://github.com/kyleburt11495/cogs121#readme",
+  "homepage": "https://github.com/lynleyyama/psych134-jeopardy",
   "dependencies": {
     "express": "^4.16.3",
   }
