@@ -67,11 +67,12 @@
     overflow: scroll;
 }
 
-#info-modal p {
+#p {
     text-align: left;
     float: left;
     margin: auto;
     font-family: 'Montserrat', sans-serif;
+    width: 75%;
 }
 
 #info-modal ul, ol {
