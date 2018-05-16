@@ -89,9 +89,9 @@
 			let currQuestion = '';
 			let score = 0;
 			$('.categories .card').click((e)=>{
-				const parent = $(event.target).parent();
+				console.log(event.target.id);
 				$.ajax({
-					url : 'category/' + parent.attr('id'),
+					url : 'category/' + event.target.id,
 					type : 'GET',
 					dataType: 'json',
 					success : (data) => {
@@ -104,8 +104,10 @@
 				});
 			});
 			$('.categories i').click((e)=>{
+				const parent = $(event.target).parent();
 				$.ajax({
-					url : 'category/' + event.target.id,
+					
+					url : 'category/' + parent.attr('id'),
 					type : 'GET',
 					dataType: 'json',
 					success : (data) => {
