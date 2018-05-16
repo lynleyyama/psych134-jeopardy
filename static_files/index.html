@@ -3,57 +3,61 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	<i class="fas fa-redo fa-lg" id="clear"></i>
-	<h1 id="title">MYTH or FACT: Eating Disorders</h1>
-	<div class="row mt-5 categories">
-		<div class="card col-auto ml-auto" id="history">HISTORY</div>
-		<div class="card col-auto" id="types">TYPES OF EATING DISORDERS</div>
-		<div class="card col-auto" id="medical">MEDICAL CONSEQUENCES</div>
-		<div class="card col-auto" id="culture">CULTURAL INFLUENCES</div>
-		<div class="card col-auto" id="neurobiology">NEUROBIOLOGY</div>
+	<h2 id="title"><b>MYTH or FACT:</b> <span>Eating Disorders</span></h2>
+	<h3 id="score">Score: <span style="font-size: 30px; color: blue;">0</span></h3>
+	<div class="row mt-3 categories">
+		<div class="card col-sm-2 ml-auto" id="history">HISTORY <i class="fas fa-info-circle"></i></div>
+		<div class="card col-sm-2" id="types">ASSESSMENT AND DIAGNOSIS<i class="fas fa-info-circle"></i></div>
+		<div class="card col-sm-2" id="medical">MEDICAL CONSEQUENCES <i class="fas fa-info-circle"></i></div>
+		<div class="card col-sm-2" id="culture">CULTURAL AND SOCIAL INFLUENCES <i class="fas fa-info-circle"></i></div>
+		<div class="card col-sm-2" id="neurobiology">NEUROBIOLOGY <i class="fas fa-info-circle"></i></div>
 	</div>
 	<div class="row mt-4 questions">
-		<div class="card col-auto ml-auto" id="h-100">100</div>
-		<div class="card col-auto" id="t-100">100</div>
-		<div class="card col-auto" id="m-100">100</div>
-		<div class="card col-auto" id="c-100">100</div>
-		<div class="card col-auto" id="n-100">100</div>
+		<div class="card col-sm-2 ml-auto" id="h-100" data-value="100">100</div>
+		<div class="card col-sm-2" id="t-100" data-value="100">100</div>
+		<div class="card col-sm-2" id="m-100" data-value="100">100</div>
+		<div class="card col-sm-2" id="c-100" data-value="100">100</div>
+		<div class="card col-sm-2" id="n-100" data-value="100">100</div>
 	</div>
 	<div class="row mt-3 questions">
-		<div class="card col-auto ml-auto" id="h-200">200</div>
-		<div class="card col-auto" id="t-200">200</div>
-		<div class="card col-auto" id="m-200">200</div>
-		<div class="card col-auto" id="c-200">200</div>
-		<div class="card col-auto" id="n-200">200</div>
+		<div class="card col-sm-2 ml-auto" id="h-200" data-value="200">200</div>
+		<div class="card col-sm-2" id="t-200" data-value="200">200</div>
+		<div class="card col-sm-2" id="m-200" data-value="200">200</div>
+		<div class="card col-sm-2" id="c-200" data-value="200">200</div>
+		<div class="card col-sm-2" id="n-200" data-value="200">200</div>
 	</div>
 	<div class="row mt-3 questions">
-		<div class="card col-auto ml-auto" id="h-300">300</div>
-		<div class="card col-auto" id="t-300">300</div>
-		<div class="card col-auto" id="m-300">300</div>
-		<div class="card col-auto" id="c-300">300</div>
-		<div class="card col-auto" id="n-300">300</div>
+		<div class="card col-sm-2 ml-auto" id="h-300" data-value="300">300</div>
+		<div class="card col-sm-2" id="t-300" data-value="300">300</div>
+		<div class="card col-sm-2" id="m-300" data-value="300">300</div>
+		<div class="card col-sm-2" id="c-300" data-value="300">300</div>
+		<div class="card col-sm-2" id="n-300" data-value="300">300</div>
 	</div>
 	<div class="row mt-3 questions">
-		<div class="card col-auto ml-auto" id="h-400">400</div>
-		<div class="card col-auto" id="t-400">400</div>
-		<div class="card col-auto" id="m-400">400</div>
-		<div class="card col-auto" id="c-400">400</div>
-		<div class="card col-auto" id="n-400">400</div>
+		<div class="card col-sm-2 ml-auto" id="h-400" data-value="400">400</div>
+		<div class="card col-sm-2" id="t-400" data-value="400">400</div>
+		<div class="card col-sm-2" id="m-400" data-value="400">400</div>
+		<div class="card col-sm-2" id="c-400" data-value="400">400</div>
+		<div class="card col-sm-2" id="n-400" data-value="400">400</div>
 	</div>
 	<div class="row mt-3 questions">
-		<div class="card col-auto ml-auto" id="h-500">500</div>
-		<div class="card col-auto" id="t-500">500</div>
-		<div class="card col-auto" id="m-500">500</div>
-		<div class="card col-auto" id="c-500">500</div>
-		<div class="card col-auto" id="n-500">500</div>
+		<div class="card col-sm-2 ml-auto" id="h-500" data-value="500">500</div>
+		<div class="card col-sm-2" id="t-500" data-value="500">500</div>
+		<div class="card col-sm-2" id="m-500" data-value="500">500</div>
+		<div class="card col-sm-2" id="c-500" data-value="500">500</div>
+		<div class="card col-sm-2" id="n-500" data-value="500">500</div>
 	</div>
+
 	<div class="modal" id="question-modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<h4>History $100</h4>
+			<h5 style="text-decoration: underline;">MYTH or FACT:</h5>
+			<h4 id="question">History $100</h4>
 			<div class="buttons">
 				<div class="btn btn-primary" id="myth">MYTH</div>
 				<div class="btn btn-primary" id="fact">FACT</div>
@@ -63,8 +67,16 @@
 	<div class="modal" id="info-modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
+			<span id="icon"></span>
 			<h4></h4>
 			<p></p>
+		</div>
+	</div>
+	<p id="ref-link">References</p>
+	<div class="modal" id="references">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<embed src="PSYCH134-MidtermReferences.pdf" width="100%" height="1000" type='application/pdf'>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -75,7 +87,23 @@
 			let answer = '';
 			let explanation = '';
 			let currQuestion = '';
+			let score = 0;
 			$('.categories .card').click((e)=>{
+				const parent = $(event.target).parent();
+				$.ajax({
+					url : 'category/' + parent.attr('id'),
+					type : 'GET',
+					dataType: 'json',
+					success : (data) => {
+						if(data){
+							$('#info-modal .modal-content h4').html(data.title);
+							$('#info-modal .modal-content p').html(data.info);
+							$('#info-modal').show();
+						}
+					}
+				});
+			});
+			$('.categories i').click((e)=>{
 				$.ajax({
 					url : 'category/' + event.target.id,
 					type : 'GET',
@@ -98,7 +126,7 @@
 					dataType: 'json',
 					success: (data) => {
 						if(data){
-							$("#question-modal .modal-content h4").html(data.q);
+							$("#question").html(data.q);
 							$("#question-modal").show();
 							answer = data.a;
 							explanation = data.e;
@@ -117,6 +145,7 @@
 				if($(event.target).attr('class') == 'modal'){
 					$('.modal').hide();
 					$('.modal h4').html('');
+					$('#icon').html('');
 				}
 			});
 
@@ -137,16 +166,25 @@
 			$('#clear').click((e)=>{
 				location.reload();
 			});
+			$('#ref-link').click((e)=>{
+				$('#references').show();
+			});
 			const correct = () => {
-				$('#info-modal .modal-content h4').html("CORRECT!");
+				$('#icon').html('<i style="color: limegreen; margin-bottom: 15px;" class="far fa-smile fa-6x"></i>');
+				$('#info-modal .modal-content h4').html("NICE!");
+				$('#info-modal .modal-content h4').css('color','limegreen');
 				$('#info-modal .modal-content p').html(explanation);
 				$('#info-modal').show();
 				$('#question-modal').hide();
-				$('#' + currQuestion).html('<i class="fas fa-check fa-3x" style="color: lightgreen;"></i>');
+				score += $('#' + currQuestion).data('value');
+				$('#score span').html(score);
+				$('#' + currQuestion).html('<i class="fas fa-check fa-3x" style="color: limegreen;"></i>');
 				$('#' + currQuestion).addClass('answered');
 			};
 			const incorrect = () => {
-				$('#info-modal .modal-content h4').html("INCORRECT");
+				$('#icon').html('<i style="color: red; margin-bottom: 15px;" class="far fa-frown fa-6x"></i>');
+				$('#info-modal .modal-content h4').html("NOPE!");
+				$('#info-modal .modal-content h4').css('color','red');
 				$('#info-modal .modal-content p').html(explanation);
 				$('#info-modal').show();
 				$('#question-modal').hide();
