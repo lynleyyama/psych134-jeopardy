@@ -67,8 +67,8 @@
 	<div class="modal" id="info-modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<span id="icon"></span>
-			<h4></h4>
+			<h4 id="answer"></h4>
+			<h6 id="info-question"></h6>
 			<p id="p"></p>
 		</div>
 	</div>
@@ -85,6 +85,8 @@
 	<script>
 		$(document).ready(function(){
 			let answer = '';
+			let fullAnswer = '';
+			let fullQuestion = '';
 			let explanation = '';
 			let currQuestion = '';
 			let score = 0;
@@ -130,6 +132,7 @@
 						if(data){
 							$("#question").html(data.q);
 							$("#question-modal").show();
+							fullQuestion = data.q;
 							answer = data.a;
 							explanation = data.e;
 						}
@@ -142,29 +145,31 @@
 			$('.close').click((e)=>{
 				$('.modal').hide();
 				$('.modal h4').html('');
-				$('#icon').html('');
 				$('#info-modal h4').css('color','#0078CD');
 			})
 			$(window).click((e)=>{
 				if($(event.target).attr('class') == 'modal'){
 					$('.modal').hide();
 					$('.modal h4').html('');
-					$('#icon').html('');
 					$('#info-modal h4').css('color','#0078CD');
 				}
 			});
 
 			$('#myth').click((e)=>{
 				if(answer == 'm'){
+					fullAnswer = 'MYTH!';
 					correct();
 				} else {
+					fullAnswer = 'FALSE!';
 					incorrect();
 				}
 			});
 			$('#fact').click((e)=>{
 				if(answer == 'f'){
+					fullAnswer = 'MYTH!';
 					correct();
 				} else {
+					fullAnswer = 'FALSE!';
 					incorrect();
 				}
 			});
@@ -175,9 +180,9 @@
 				$('#references').show();
 			});
 			const correct = () => {
-				$('#icon').html('<i style="color: limegreen; margin-bottom: 15px;" class="far fa-smile fa-6x"></i>');
-				$('#info-modal .modal-content h4').html("NICE!");
-				$('#info-modal .modal-content h4').css('color','limegreen');
+				$('#info-question').html(fullQuestion);
+				$('#answer').html(fullAnswer);
+				$('#answer').css('color','limegreen');
 				$('#p').html(explanation);
 				$('#info-modal').show();
 				$('#question-modal').hide();
@@ -187,9 +192,9 @@
 				$('#' + currQuestion).addClass('answered');
 			};
 			const incorrect = () => {
-				$('#icon').html('<i style="color: red; margin-bottom: 15px;" class="far fa-frown fa-6x"></i>');
-				$('#info-modal .modal-content h4').html("NOPE!");
-				$('#info-modal .modal-content h4').css('color','red');
+				$('#info-question').html(fullQuestion);
+				$('#answer').html(fullAnswer);
+				$('#answer').css('color','red');
 				$('#p').html(explanation);
 				$('#info-modal').show();
 				$('#question-modal').hide();
