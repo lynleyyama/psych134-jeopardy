@@ -89,14 +89,15 @@
     color: #6FA5B6;
 }
 
-
 #info-modal h4 {
     font-size: 40px;
-    margin-bottom: 2rem;
     color: #0078CD;
     font-family: 'Permanent Marker', cursive;
 }
 
+#info-question {
+    margin-bottom: 2rem;
+}
 .btn {
     font-size: 23px;
     margin: 3%;
