@@ -62,7 +62,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 70%;
     text-align: center;
     overflow: scroll;
 }
@@ -73,6 +73,7 @@
     margin: auto;
     font-family: 'Montserrat', sans-serif;
     width: 75%;
+    font-size: 14px;
 }
 
 #info-modal ul, ol {
