@@ -76,6 +76,10 @@
     font-size: 14px;
 }
 
+#info-modal .modal-content {
+    padding-bottom: 4rem;
+}
+
 #info-modal ul, ol {
     text-align: left;
 }
