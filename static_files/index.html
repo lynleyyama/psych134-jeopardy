@@ -68,7 +68,7 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h4 id="answer"></h4>
-			<h6 id="info-question"></h6>
+			<h4 id="info-question"></h4>
 			<p id="p"></p>
 		</div>
 	</div>
@@ -98,7 +98,7 @@
 					dataType: 'json',
 					success : (data) => {
 						if(data){
-							$('#info-modal .modal-content h4').html(data.title);
+							$('#info-question').html(data.title);
 							$('#p').html(data.info);
 							$('#info-modal').show();
 						}
@@ -115,7 +115,7 @@
 					success : (data) => {
 						console.log(data);
 						if(data){
-							$('#info-modal .modal-content h4').html(data.title);
+							$('#info-question').html(data.title);
 							$('#p').html(data.info);
 							$('#info-modal').show();
 						}
@@ -183,6 +183,7 @@
 			});
 			const correct = () => {
 				$('#info-question').html(fullQuestion);
+				//$('#info-question span').removeClass('q');
 				$('#answer').html(fullAnswer);
 				$('#answer').css('color','limegreen');
 				$('#p').html(explanation);
@@ -195,6 +196,7 @@
 			};
 			const incorrect = () => {
 				$('#info-question').html(fullQuestion);
+				//$('#info-question span').removeClass('q');
 				$('#answer').html(fullAnswer);
 				$('#answer').css('color','red');
 				$('#p').html(explanation);
